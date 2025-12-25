@@ -194,21 +194,3 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is private and proprietary.
-
-## 💬 Support
-
-For support, email <support@example.com> or join our community forum.
-
-## 🙏 Acknowledgments
-
-- Built with [v0.dev](https://v0.dev/)
-- UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Icons from [Lucide](https://lucide.dev/)
-
----
-
-**Made with ❤️ by the SCIQ Team**
