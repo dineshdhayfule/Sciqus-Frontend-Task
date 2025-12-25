@@ -54,7 +54,15 @@ export default function SettingsPage() {
                 <p className="font-medium text-foreground">{item.label}</p>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
-              <input type="checkbox" className="w-4 h-4" defaultChecked />
+              <label htmlFor={`checkbox-${item.label.replace(/\s+/g, '-').toLowerCase()}`} className="cursor-pointer">
+                <input
+                  id={`checkbox-${item.label.replace(/\s+/g, '-').toLowerCase()}`}
+                  type="checkbox"
+                  className="w-4 h-4"
+                  defaultChecked
+                  aria-label={item.label}
+                />
+              </label>
             </div>
           ))}
         </CardContent>
