@@ -24,15 +24,15 @@ export default function Header({ onMenuClick }: HeaderProps) {
       <div className="flex items-center justify-between px-4 py-3 md:px-8">
         <div className="flex items-center gap-3">
           <div className="h-8 w-8 rounded-lg bg-primary" />
-          <h1 className="text-lg font-semibold text-foreground hidden sm:block">Platform</h1>
+          <h1 className="text-lg font-semibold text-foreground hidden sm:block">SciQus</h1>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">
           <Link
             href="/dashboard"
             className={`text-sm font-medium transition-colors ${isActive("/dashboard") && pathname === "/dashboard"
-                ? "text-primary border-b-2 border-primary pb-1"
-                : "text-muted-foreground hover:text-foreground"
+              ? "text-primary border-b-2 border-primary pb-1"
+              : "text-muted-foreground hover:text-foreground"
               }`}
           >
             Dashboard
@@ -40,8 +40,8 @@ export default function Header({ onMenuClick }: HeaderProps) {
           <Link
             href="/dashboard/analytics"
             className={`text-sm font-medium transition-colors ${isActive("/dashboard/analytics")
-                ? "text-primary border-b-2 border-primary pb-1"
-                : "text-muted-foreground hover:text-foreground"
+              ? "text-primary border-b-2 border-primary pb-1"
+              : "text-muted-foreground hover:text-foreground"
               }`}
           >
             Analytics
@@ -49,8 +49,8 @@ export default function Header({ onMenuClick }: HeaderProps) {
           <Link
             href="/dashboard/settings"
             className={`text-sm font-medium transition-colors ${isActive("/dashboard/settings")
-                ? "text-primary border-b-2 border-primary pb-1"
-                : "text-muted-foreground hover:text-foreground"
+              ? "text-primary border-b-2 border-primary pb-1"
+              : "text-muted-foreground hover:text-foreground"
               }`}
           >
             Settings
