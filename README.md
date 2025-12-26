@@ -1,16 +1,25 @@
-# Platform Dashboard
+# SciQus Platform Dashboard
 
-A modern, responsive dashboard application built with Next.js 16, React 19, and Tailwind CSS. This platform provides a comprehensive analytics and management interface with a clean, intuitive design.
+A modern, responsive dashboard application built with Next.js 16, React 19, and Tailwind CSS. This platform provides a comprehensive analytics and management interface with smooth animations, intuitive navigation, and an exceptional mobile experience.
 
 ## 🚀 Features
+
+### Core Features
 
 - **Dashboard Overview**: Real-time metrics including revenue growth, user statistics, and key performance indicators
 - **Analytics**: Detailed charts and graphs for tracking revenue trends, user growth, and category distribution
 - **Settings**: User account management and notification preferences
 - **Help & Support**: FAQ section and support resources
 - **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **Dark Mode Support**: Built-in theme support with next-themes
-- **Modern UI**: Powered by Radix UI components and Tailwind CSS
+
+### Enhanced UI/UX
+
+- **Smooth Animations**: Page transitions and scroll-triggered fade-in effects using Framer Motion
+- **Interactive Elements**: Hover effects with scale animations on cards, buttons, and navigation items
+- **Mobile Gestures**: Swipe-to-close sidebar functionality for mobile devices
+- **Touch Optimized**: Active states and press feedback on all interactive elements
+- **Modern Navigation**: Unified sidebar navigation with search functionality in header
+- **Loading States**: Beautiful skeleton loaders and smooth transitions
 
 ## 📋 Prerequisites
 
@@ -24,7 +33,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/dineshdhayfule/Sciqus-Frontend-Task.git
    cd Frontend
    ```
 
@@ -41,7 +50,6 @@ Before you begin, ensure you have the following installed:
    ```
 
 4. **Open your browser**
-
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📦 Available Scripts
@@ -56,32 +64,34 @@ Before you begin, ensure you have the following installed:
 ```
 Frontend/
 ├── app/                      # Next.js app directory
-│   ├── dashboard/           # Dashboard routes
-│   │   ├── analytics/       # Analytics page
-│   │   ├── settings/        # Settings page
+│   ├── dashboard/           # Dashboard routes (all pages)
+│   │   ├── analytics/       # Analytics page with charts
+│   │   ├── settings/        # Settings & preferences page
 │   │   ├── help/           # Help & Support page
-│   │   ├── layout.tsx      # Dashboard layout with navbar
+│   │   ├── layout.tsx      # Dashboard layout with navbar & sidebar
 │   │   └── page.tsx        # Dashboard home page
-│   ├── layout.tsx          # Root layout
+│   ├── layout.tsx          # Root layout with metadata
 │   ├── page.tsx            # Landing page
 │   └── globals.css         # Global styles
 ├── components/              # React components
 │   ├── ui/                 # UI components (shadcn/ui)
-│   ├── header.tsx          # Header navigation
-│   └── sidebar.tsx         # Sidebar navigation
+│   ├── containers/         # Dashboard container components
+│   ├── header.tsx          # Header with search & profile
+│   ├── sidebar.tsx         # Sidebar navigation with swipe gestures
+│   ├── page-transition.tsx # Page transition wrapper
+│   └── fade-in.tsx         # Scroll-triggered fade-in animations
 ├── hooks/                   # Custom React hooks
 ├── lib/                     # Utility functions
 ├── public/                  # Static assets
 ├── styles/                  # Additional styles
 └── package.json            # Project dependencies
-
 ```
 
 ## 🎨 Tech Stack
 
 ### Core
 
-- **[Next.js 16](https://nextjs.org/)** - React framework with App Router
+- **[Next.js 16](https://nextjs.org/)** - React framework with App Router & Turbopack
 - **[React 19](https://react.dev/)** - UI library
 - **[TypeScript](https://www.typescriptlang.org/)** - Type safety
 
@@ -91,7 +101,7 @@ Frontend/
 - **[Radix UI](https://www.radix-ui.com/)** - Accessible component primitives
 - **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable component library
 - **[Lucide React](https://lucide.dev/)** - Icon library
-- **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme management
+- **[Framer Motion](https://www.framer.com/motion/)** - Animation library
 
 ### Data Visualization
 
@@ -108,41 +118,64 @@ Frontend/
 
 ## 🎯 Key Features Explained
 
-### Navigation
+### Navigation System
 
-The application features a persistent navigation system:
+The application features a modern, unified navigation:
 
-- **Header**: Top navigation bar with quick access to main sections
-- **Sidebar**: Left-side navigation menu (collapsible on mobile)
-- Both navigation components are integrated into the dashboard layout
+- **Header**:
+  - Company logo and branding
+  - Search bar for quick access (desktop)
+  - Notification bell with badge indicator
+  - User profile icon
+  - Mobile menu toggle button
+- **Sidebar**:
+  - All navigation links consolidated in sidebar
+  - Smooth slide-in animation on mobile
+  - Swipe-left gesture to close on mobile
+  - Hover effects with scale animations
+  - Active state indicators
+  - Help card at bottom with call-to-action
+
+### Page Animations
+
+- **Page Transitions**: Smooth fade-in/slide-up animations when navigating
+- **Scroll Animations**: Cards fade in as you scroll down
+- **Staggered Effects**: Elements animate in sequence with delays
+- **Hover States**: Scale and shadow effects on interactive elements
+- **Touch Feedback**: Active press states on mobile devices
 
 ### Dashboard
 
 - Key metrics display (Revenue Growth, Total Users)
+- Animated container cards with smooth transitions
+- Monthly performance tracking with carousels
 - Platform features overview
-- Monthly performance tracking
-- User testimonials
+- User testimonials with 5-star ratings
 - Quick action buttons
 
 ### Analytics
 
-- Revenue trend line chart
+- Revenue trend line chart (responsive)
 - User growth bar chart
-- Category distribution visualization
-- Customizable date ranges
+- Category distribution pie chart
+- Key metrics cards with hover effects
+- Mobile-optimized chart displays
 
 ### Settings
 
-- Account profile management
-- Notification preferences
+- Account profile management with input fields
+- Notification preferences with toggles
 - Password and security options
-- Data privacy controls
+- Animated form cards
+- Save buttons with hover effects
 
 ### Help & Support
 
-- Comprehensive FAQ section
-- Support resources and documentation links
-- Contact information
+- Quick resource cards with icons
+- Comprehensive FAQ section with expandable items
+- Contact support section
+- Hover animations on all cards
+- Schedule demo button
 
 ## 🔧 Configuration
 
@@ -178,12 +211,61 @@ pnpm start
 
 ## 📱 Responsive Design
 
-The application is fully responsive and optimized for:
+The application is fully responsive and optimized for all screen sizes:
 
-- 📱 Mobile devices (320px and up)
-- 📱 Tablets (768px and up)
-- 💻 Desktop (1024px and up)
-- 🖥️ Large screens (1280px and up)
+### Mobile (320px - 767px)
+
+- ✅ Hamburger menu with slide-in sidebar
+- ✅ Swipe-left gesture to close sidebar
+- ✅ Touch-optimized buttons with active states
+- ✅ Responsive charts that adapt to screen width
+- ✅ Stacked layout for better readability
+- ✅ Company branding visible in header
+
+### Tablet (768px - 1023px)
+
+- ✅ Persistent sidebar navigation
+- ✅ Two-column grid layouts
+- ✅ Optimized spacing and typography
+- ✅ Full feature access
+
+### Desktop (1024px and up)
+
+- ✅ Persistent sidebar with hover effects
+- ✅ Search bar in header
+- ✅ Multi-column layouts (3+ columns)
+- ✅ Advanced hover interactions
+- ✅ Optimal chart and data visualization
+
+### Large Screens (1280px and up)
+
+- ✅ Maximum width constraints for readability
+- ✅ Enhanced spacing and visual hierarchy
+- ✅ Full-width data tables and charts
+
+## ✨ Animation Features
+
+### Page-Level Animations
+
+- **Entry Animations**: Pages fade in with upward slide on load
+- **Exit Animations**: Smooth fade out when navigating away
+- **Duration**: 300ms with easeInOut timing
+
+### Component Animations
+
+- **Fade-In on Scroll**: Components animate when they enter viewport
+- **Staggered Loading**: Sequential delays (0.1s, 0.2s, etc.) for visual flow
+- **Hover Effects**:
+  - Cards: `scale-105` with shadow increase
+  - Buttons: `scale-105` on hover, `scale-95` on press
+  - Links: `scale-105` animation
+- **Touch States**: Active press feedback on all interactive elements
+
+### Mobile Gestures
+
+- **Swipe to Close**: Sidebar closes with left swipe (>75px threshold)
+- **Smooth Transitions**: 300ms duration for all animations
+- **Backdrop**: Animated overlay fade on mobile sidebar
 
 ## 🤝 Contributing
 
