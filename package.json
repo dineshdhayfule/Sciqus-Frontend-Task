@@ -1,12 +1,17 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "sciqus-platform",
+  "version": "1.0.0",
   "private": true,
+  "description": "SciQus Platform Dashboard - Modern analytics and management interface",
+  "author": "Your Name",
+  "license": "MIT",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "preview": "next build && next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -1,6 +1,8 @@
 # SciQus Platform Dashboard
 
-A modern, responsive dashboard application built with Next.js 16, React 19, and Tailwind CSS. This platform provides a comprehensive analytics and management interface with smooth animations, intuitive navigation, and an exceptional mobile experience.
+A modern, responsive, production-ready dashboard application built with Next.js 16, React 19, and Tailwind CSS. This platform provides a comprehensive analytics and management interface with smooth animations, intuitive navigation, and an exceptional mobile experience.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dineshdhayfule/Sciqus-Frontend-Task)
 
 ## 🚀 Features
 
@@ -21,12 +23,22 @@ A modern, responsive dashboard application built with Next.js 16, React 19, and 
 - **Modern Navigation**: Unified sidebar navigation with search functionality in header
 - **Loading States**: Beautiful skeleton loaders and smooth transitions
 
+### Production Features
+
+- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, sitemap, robots.txt
+- **Performance**: Image optimization, SWC minification, code splitting
+- **Security**: Security headers, environment variable management
+- **Analytics**: Vercel Analytics integration
+- **PWA Ready**: Web app manifest for installable experience
+- **CI/CD**: GitHub Actions workflow for automated testing
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [pnpm](https://pnpm.io/) (v10 or higher)
+- [Git](https://git-scm.com/)
 
 ## 🛠️ Installation
 
@@ -43,13 +55,26 @@ Before you begin, ensure you have the following installed:
    pnpm install
    ```
 
-3. **Run the development server**
+3. **Set up environment variables**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Update `.env.local` with your configuration:
+
+   ```env
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   # Add other variables as needed
+   ```
+
+4. **Run the development server**
 
    ```bash
    pnpm dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📦 Available Scripts
@@ -58,11 +83,46 @@ Before you begin, ensure you have the following installed:
 - `pnpm build` - Build the application for production
 - `pnpm start` - Start the production server
 - `pnpm lint` - Run ESLint for code quality checks
+- `pnpm type-check` - Run TypeScript type checking
+- `pnpm preview` - Build and preview production locally
+
+## 🚢 Deployment to Vercel
+
+### Quick Deploy
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com/new)
+3. Import your repository
+4. Configure environment variables
+5. Click "Deploy"
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+### Environment Variables
+
+Set these in Vercel Dashboard → Settings → Environment Variables:
+
+```env
+NEXT_PUBLIC_APP_URL=https://your-domain.vercel.app
+NEXT_PUBLIC_APP_NAME=SciQus
+# Add other variables from .env.example
+```
+
+### Post-Deployment
+
+After deployment, update these files with your production domain:
+
+- `app/robots.ts` - Update sitemap URL
+- `app/sitemap.ts` - Update baseUrl
+- `.env.local` - Update NEXT_PUBLIC_APP_URL
 
 ## 🏗️ Project Structure
 
 ```
 Frontend/
+├── .github/
+│   └── workflows/
+│       └── ci.yml           # GitHub Actions CI/CD
 ├── app/                      # Next.js app directory
 │   ├── dashboard/           # Dashboard routes (all pages)
 │   │   ├── analytics/       # Analytics page with charts
@@ -72,6 +132,8 @@ Frontend/
 │   │   └── page.tsx        # Dashboard home page
 │   ├── layout.tsx          # Root layout with metadata
 │   ├── page.tsx            # Landing page
+│   ├── robots.ts           # Robots.txt configuration
+│   ├── sitemap.ts          # Sitemap generation
 │   └── globals.css         # Global styles
 ├── components/              # React components
 │   ├── ui/                 # UI components (shadcn/ui)
@@ -83,7 +145,16 @@ Frontend/
 ├── hooks/                   # Custom React hooks
 ├── lib/                     # Utility functions
 ├── public/                  # Static assets
-├── styles/                  # Additional styles
+│   └── manifest.json       # PWA manifest
+├── .env.example            # Environment variables template
+├── .gitignore              # Git ignore rules
+├── .vercelignore           # Vercel ignore rules
+├── next.config.mjs         # Next.js configuration
+├── vercel.json             # Vercel deployment configuration
+├── tsconfig.json           # TypeScript configuration
+├── DEPLOYMENT.md           # Deployment guide
+├── PRODUCTION_CHECKLIST.md # Pre-deployment checklist
+├── SECURITY.md             # Security policy
 └── package.json            # Project dependencies
 ```
 
